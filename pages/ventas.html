@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Órdenes - PymeSmart</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <nav class="top-navbar">
+        <a href="dashboard.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Inicio</span>
+        </a>
+        <a href="usuarios.html" class="nav-item">
+            <span class="nav-icon">👥</span>
+            <span>Empleados</span>
+        </a>
+        <a href="proveedores.html" class="nav-item">
+            <span class="nav-icon">📦</span>
+            <span>Proveedores</span>
+        </a>
+        <a href="productos.html" class="nav-item">
+            <span class="nav-icon">🖨️</span>
+            <span>Servicios</span>
+        </a>
+        <a href="ventas.html" class="nav-item active">
+            <span class="nav-icon">📋</span>
+            <span>Órdenes</span>
+        </a>
+        <a href="estadisticas.html" class="nav-item">
+            <span class="nav-icon">📊</span>
+            <span>Estadísticas</span>
+        </a>
+        <a href="#" id="logout-btn" class="nav-item logout">
+            <span class="nav-icon">🚪</span>
+            <span>Cerrar Sesión</span>
+        </a>
+    </nav>
+
+    <div class="content">
+        <div class="page-header">
+            <h1>Gestión de Órdenes de Impresión</h1>
+            <button id="agregar-venta" class="btn-primary">+ Agregar Orden</button>
+        </div>
+        
+        <!-- Búsqueda y Filtros -->
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="search-ventas" class="search-input" placeholder="Buscar por servicio, ID o cantidad...">
+        </div>
+        
+        <div class="date-filters">
+            <div class="date-filter-group">
+                <label>Desde:</label>
+                <input type="date" id="fecha-desde" class="date-filter-input">
+            </div>
+            <div class="date-filter-group">
+                <label>Hasta:</label>
+                <input type="date" id="fecha-hasta" class="date-filter-input">
+            </div>
+            <button id="aplicar-filtros" class="btn-primary">Aplicar Filtros</button>
+            <button id="limpiar-filtros" class="btn-secondary">Limpiar</button>
+        </div>
+        
+        <div class="table-container">
+            <table class="data-table" id="ventas-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Servicio</th>
+                        <th>Cantidad</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="ventas-table-body">
+                    <!-- Datos cargados dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/ventas.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Logs / temp
+*.log
+tmp/
+temp/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Dependency/vendor folders (si se usan a futuro)
+vendor/
+node_modules/
+
+# Runtime uploads/cache (ajusta según proyecto)
+uploads/
+cache/
+

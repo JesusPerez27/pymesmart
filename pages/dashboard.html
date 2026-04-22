@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PymeSmart - Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <nav class="top-navbar">
+        <a href="dashboard.html" class="nav-item active">
+            <span class="nav-icon">🏠</span>
+            <span>Inicio</span>
+        </a>
+        <a href="usuarios.html" class="nav-item">
+            <span class="nav-icon">👥</span>
+            <span>Empleados</span>
+        </a>
+        <a href="proveedores.html" class="nav-item">
+            <span class="nav-icon">📦</span>
+            <span>Proveedores</span>
+        </a>
+        <a href="productos.html" class="nav-item">
+            <span class="nav-icon">🖨️</span>
+            <span>Servicios</span>
+        </a>
+        <a href="ventas.html" class="nav-item">
+            <span class="nav-icon">📋</span>
+            <span>Órdenes</span>
+        </a>
+        <a href="estadisticas.html" class="nav-item">
+            <span class="nav-icon">📊</span>
+            <span>Estadísticas</span>
+        </a>
+        <a href="#" id="logout-btn" class="nav-item logout">
+            <span class="nav-icon">🚪</span>
+            <span>Cerrar Sesión</span>
+        </a>
+    </nav>
+    
+    <div class="content">
+        <div class="page-header">
+            <div>
+                <h1>🏠 Dashboard</h1>
+                <p class="welcome-text">Bienvenido, <span id="user-name">Usuario</span></p>
+            </div>
+            <div class="header-actions">
+                <a href="estadisticas.html" class="btn-primary">📊 Ver Estadísticas</a>
+            </div>
+        </div>
+
+        <!-- Resumen Rápido -->
+        <div class="stats-cards-container">
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div class="stat-content">
+                    <h3>Ingresos Hoy</h3>
+                    <p class="stat-value" id="ingresos-hoy">$0.00</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📋</div>
+                <div class="stat-content">
+                    <h3>Órdenes Hoy</h3>
+                    <p class="stat-value" id="ordenes-hoy">0</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📦</div>
+                <div class="stat-content">
+                    <h3>Servicios Activos</h3>
+                    <p class="stat-value" id="servicios-activos">0</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⚠️</div>
+                <div class="stat-content">
+                    <h3>Stock Bajo</h3>
+                    <p class="stat-value" id="stock-bajo">0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gráfica Rápida y Alertas -->
+        <div class="charts-container">
+            <div class="chart-wrapper">
+                <div class="chart-header">
+                    <h2>📈 Ventas de Hoy</h2>
+                </div>
+                <canvas id="chart-dashboard"></canvas>
+            </div>
+            
+            <div class="chart-wrapper">
+                <div class="chart-header">
+                    <h2>⚠️ Alertas y Notificaciones</h2>
+                </div>
+                <div id="alertas-container" class="alertas-container">
+                    <div class="loading-spinner">Cargando alertas...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Últimas Órdenes -->
+        <div class="table-container">
+            <div class="section-header">
+                <h2 class="section-title">📋 Últimas Órdenes</h2>
+                <a href="ventas.html" class="btn-link">Ver todas →</a>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Servicio</th>
+                        <th>Cantidad</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody id="ultimas-ordenes-body">
+                    <tr>
+                        <td colspan="4" style="text-align: center; padding: 20px;">
+                            Cargando...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Accesos Rápidos -->
+        <div class="quick-actions">
+            <h2 class="section-title">⚡ Accesos Rápidos</h2>
+            <div class="quick-actions-grid">
+                <a href="ventas.html" class="quick-action-card">
+                    <div class="quick-action-icon">➕</div>
+                    <h3>Nueva Orden</h3>
+                    <p>Crear una nueva orden de impresión</p>
+                </a>
+                <a href="productos.html" class="quick-action-card">
+                    <div class="quick-action-icon">🖨️</div>
+                    <h3>Gestionar Servicios</h3>
+                    <p>Ver y editar servicios de impresión</p>
+                </a>
+                <a href="proveedores.html" class="quick-action-card">
+                    <div class="quick-action-icon">📦</div>
+                    <h3>Proveedores</h3>
+                    <p>Administrar proveedores</p>
+                </a>
+                <a href="estadisticas.html" class="quick-action-card">
+                    <div class="quick-action-icon">📊</div>
+                    <h3>Ver Reportes</h3>
+                    <p>Estadísticas y análisis detallados</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas - PymeSmart</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <nav class="top-navbar">
+        <a href="dashboard.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Inicio</span>
+        </a>
+        <a href="usuarios.html" class="nav-item">
+            <span class="nav-icon">👥</span>
+            <span>Empleados</span>
+        </a>
+        <a href="proveedores.html" class="nav-item">
+            <span class="nav-icon">📦</span>
+            <span>Proveedores</span>
+        </a>
+        <a href="productos.html" class="nav-item">
+            <span class="nav-icon">🖨️</span>
+            <span>Servicios</span>
+        </a>
+        <a href="ventas.html" class="nav-item">
+            <span class="nav-icon">📋</span>
+            <span>Órdenes</span>
+        </a>
+        <a href="estadisticas.html" class="nav-item active">
+            <span class="nav-icon">📊</span>
+            <span>Estadísticas</span>
+        </a>
+        <a href="#" id="logout-btn" class="nav-item logout">
+            <span class="nav-icon">🚪</span>
+            <span>Cerrar Sesión</span>
+        </a>
+    </nav>
+
+    <div class="content">
+        <div class="page-header">
+            <h1>📊 Estadísticas y Reportes</h1>
+            <div class="filter-buttons">
+                <button class="btn-filter active" data-type="daily">📅 Hoy</button>
+                <button class="btn-filter" data-type="monthly">📆 Este Mes</button>
+                <button class="btn-filter" data-type="yearly">📅 Este Año</button>
+            </div>
+        </div>
+
+        <!-- Tarjetas de Resumen -->
+        <div class="stats-cards-container">
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div class="stat-content">
+                    <h3>Ingresos Totales</h3>
+                    <p class="stat-value" id="total-ingresos">$0.00</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📦</div>
+                <div class="stat-content">
+                    <h3>Unidades Vendidas</h3>
+                    <p class="stat-value" id="total-unidades">0</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📋</div>
+                <div class="stat-content">
+                    <h3>Total de Órdenes</h3>
+                    <p class="stat-value" id="total-ordenes">0</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-content">
+                    <h3>Promedio por Orden</h3>
+                    <p class="stat-value" id="promedio-orden">$0.00</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gráficas -->
+        <div class="charts-container">
+            <div class="chart-wrapper">
+                <div class="chart-header">
+                    <h2>📈 Ventas por Servicio (Ingresos)</h2>
+                </div>
+                <canvas id="chart-ingresos"></canvas>
+            </div>
+            
+            <div class="chart-wrapper">
+                <div class="chart-header">
+                    <h2>🍰 Distribución de Ventas</h2>
+                </div>
+                <canvas id="chart-pastel"></canvas>
+            </div>
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-wrapper">
+                <div class="chart-header">
+                    <h2>📊 Unidades Vendidas por Servicio</h2>
+                </div>
+                <canvas id="chart-unidades"></canvas>
+            </div>
+            
+            <div class="chart-wrapper">
+                <div class="chart-header">
+                    <h2>📉 Comparativa de Rendimiento</h2>
+                </div>
+                <canvas id="chart-comparativa"></canvas>
+            </div>
+        </div>
+
+        <!-- Tabla de Detalles -->
+        <div class="table-container">
+            <h2 class="section-title">📋 Detalle de Ventas</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Servicio</th>
+                        <th>Unidades Vendidas</th>
+                        <th>Ingresos</th>
+                        <th>Órdenes</th>
+                        <th>Promedio/Orden</th>
+                    </tr>
+                </thead>
+                <tbody id="estadisticas-table-body">
+                    <tr>
+                        <td colspan="5" style="text-align: center; padding: 20px;">
+                            Cargando datos...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/estadisticas.js"></script>
+</body>
+</html>
+

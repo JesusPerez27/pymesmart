@@ -1,0 +1,21 @@
+# Configuración Apache para PymeSmart
+# Permite acceso a archivos estáticos y configuración básica
+
+# Habilitar reescritura de URLs
+RewriteEngine On
+
+# Redirigir a index.html si se accede a la raíz
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^pages/$ pages/index.html [L]
+
+# Permitir acceso a archivos estáticos
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# Configuración de PHP
+php_flag display_errors Off
+php_flag log_errors On
+

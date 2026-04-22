@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PymeSmart - Inicio de Sesión</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body class="login-page">
+    <button id="theme-toggle-login" class="theme-toggle-fixed" title="Cambiar tema">🌙</button>
+    <div class="login-container">
+        <div class="login-left">
+            <h1>PymeSmart</h1>
+            <p>® Sistema de Gestión para Imprentas</p>
+        </div>
+        <div class="login-right">
+            <div class="form-container">
+                <div class="user-icon">👤</div>
+                <form id="login-form">
+                    <div class="input-group">
+                        <label for="username">👤</label>
+                        <input type="text" id="username" name="username" placeholder="Usuario" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">🔒</label>
+                        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                    </div>
+                    <div id="error-message" class="error-message"></div>
+                    <button type="submit" class="login-btn">Iniciar Sesión</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/auth.js"></script>
+</body>
+</html>
+
