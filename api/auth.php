@@ -4,8 +4,12 @@
  * PymeSmart - Sistema de Gestión para Imprentas
  */
 
-session_start();
 require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../config/cors.php';
+require_once __DIR__ . '/../config/auth.php';
+
+header('Content-Type: application/json');
+configureCors();
 
 $action = $_GET['action'] ?? null;
 

@@ -4,7 +4,17 @@
  * PymeSmart - Sistema de Gestión para Imprentas
  */
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
+    session_set_cookie_params([
+        'lifetime' => 0,
+        'path' => '/',
+        'secure' => $isHttps,
+        'httponly' => true,
+        'samesite' => $isHttps ? 'None' : 'Lax'
+    ]);
+    session_start();
+}
 
 /**
  * Verificar si el usuario está autenticado

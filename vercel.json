@@ -1,0 +1,41 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/pages/index.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/pages/login.html"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/pages/dashboard.html"
+    },
+    {
+      "source": "/usuarios",
+      "destination": "/pages/usuarios.html"
+    },
+    {
+      "source": "/proveedores",
+      "destination": "/pages/proveedores.html"
+    },
+    {
+      "source": "/productos",
+      "destination": "/pages/productos.html"
+    },
+    {
+      "source": "/ventas",
+      "destination": "/pages/ventas.html"
+    },
+    {
+      "source": "/estadisticas",
+      "destination": "/pages/estadisticas.html"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "https://$RENDER_BACKEND_URL/api/:path*"
+    }
+  ]
+}

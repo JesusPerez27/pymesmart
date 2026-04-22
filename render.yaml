@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: pymesmart-api
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    branch: main
+    autoDeploy: true
+    healthCheckPath: /api/auth.php?action=check
+    envVars:
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: "3306"
+      - key: DB_NAME
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false

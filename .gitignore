@@ -19,6 +19,7 @@ temp/
 # Dependency/vendor folders (si se usan a futuro)
 vendor/
 node_modules/
+dist/
 
 # Runtime uploads/cache (ajusta según proyecto)
 uploads/
