@@ -1,8 +1,4 @@
--- PymeSmart - Script completo de esquema + datos de prueba (Railway / MySQL 8+)
--- Ejecutar en DBeaver con la base seleccionada (por ejemplo: railway)
-
-SET NAMES utf8mb4;
-SET FOREIGN_KEY_CHECKS = 0;
+SET SESSION foreign_key_checks = 0;
 
 DROP TABLE IF EXISTS `ordenes_impresion`;
 DROP TABLE IF EXISTS `servicios_impresion`;
@@ -112,4 +108,4 @@ INSERT INTO `ordenes_impresion` (`servicio_id`, `cantidad`, `fecha`) VALUES
 (7, 31, NOW() - INTERVAL 280 DAY),
 (8, 12, NOW() - INTERVAL 320 DAY);
 
-SET FOREIGN_KEY_CHECKS = 1;
+SET SESSION foreign_key_checks = 1;
