@@ -10,7 +10,6 @@ SET NAMES utf8mb4;
 -- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 -- Importacion cloud (Railway): desactiva FKs durante recreacion de tablas
@@ -226,7 +225,6 @@ ALTER TABLE `ordenes_impresion`
 --
 ALTER TABLE `servicios_impresion`
   ADD CONSTRAINT `servicios_impresion_ibfk_1` FOREIGN KEY (`proveedor_id`) REFERENCES `proveedores` (`id`) ON DELETE SET NULL;
-COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
 
