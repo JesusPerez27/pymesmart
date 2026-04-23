@@ -9,13 +9,8 @@ SET NAMES utf8mb4;
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
 -- Importacion cloud (Railway): desactiva FKs durante recreacion de tablas
 SET FOREIGN_KEY_CHECKS = 0;
-
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `pymesmart_imprentas`
